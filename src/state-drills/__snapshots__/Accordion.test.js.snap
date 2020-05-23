@@ -1,0 +1,152 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the Accordion component closes every section except the clicked one 1`] = `
+<div
+  className="Accordion"
+>
+  <ul
+    className="sections"
+  >
+    <li
+      className="section-content"
+      key="0"
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        Section 1
+      </button>
+    </li>
+    <li
+      className="section-content"
+      key="1"
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        Section 2
+      </button>
+      <p>
+        Cupiditate tenetur aliquam necessitatibus id distinctio quas nihil ipsam nisi modi!
+      </p>
+    </li>
+    <li
+      className="section-content"
+      key="2"
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        Section 3
+      </button>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`the Accordion component closes every section except the clicked one 2`] = `
+<div
+  className="Accordion"
+>
+  <ul
+    className="sections"
+  >
+    <li
+      className="section-content"
+      key="0"
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        Section 1
+      </button>
+    </li>
+    <li
+      className="section-content"
+      key="1"
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        Section 2
+      </button>
+    </li>
+    <li
+      className="section-content"
+      key="2"
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        Section 3
+      </button>
+      <p>
+        Animi amet cumque sint cupiditate officia ab voluptatibus libero optio et?
+      </p>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`the Accordion component renders empty when nothing has been clicked on 1`] = `
+<div
+  className="Accordion"
+>
+  <ul
+    className="sections"
+  />
+</div>
+`;
+
+exports[`the Accordion component still renders the section correctly when same button pressed twice 1`] = `
+<div
+  className="Accordion"
+>
+  <ul
+    className="sections"
+  >
+    <li
+      className="section-content"
+      key="0"
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        Section 1
+      </button>
+    </li>
+    <li
+      className="section-content"
+      key="1"
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        Section 2
+      </button>
+    </li>
+    <li
+      className="section-content"
+      key="2"
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        Section 3
+      </button>
+      <p>
+        Animi amet cumque sint cupiditate officia ab voluptatibus libero optio et?
+      </p>
+    </li>
+  </ul>
+</div>
+`;

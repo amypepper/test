@@ -4,47 +4,31 @@ import renderer from "react-test-renderer";
 import { shallow } from "enzyme";
 import toJson from "enzyme-to-json";
 import Accordion from "./Accordion";
+import sections from "./sections";
 
-const sections = [
-  {
-    title: "Section 1",
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-  },
-  {
-    title: "Section 2",
-    content:
-      "Cupiditate tenetur aliquam necessitatibus id distinctio quas nihil ipsam nisi modi!",
-  },
-  {
-    title: "Section 3",
-    content:
-      "Animi amet cumque sint cupiditate officia ab voluptatibus libero optio et?",
-  },
-];
-
-describe("the Accordion component", () => {
-  it("renders without crashing", () => {
+describe("Accordion component", () => {
+  it("renders without errors", () => {
     const div = document.createElement("div");
     ReactDOM.render(<Accordion />, div);
     ReactDOM.unmountComponentAtNode(div);
   });
-  it("renders empty when nothing has been clicked on", () => {
+  it("renders empty given no prop", () => {
     const wrapper = shallow(<Accordion />);
     expect(toJson(wrapper)).toMatchSnapshot();
   });
-  it("closes every section except the clicked one", () => {
+  it("renders no sections as active by default", () => {
+    const wrapper = shallow(<Accordion sections={sections} />);
+    expect(toJson(wrapper)).toMatchSnapshot();
+  });
+  it("opens a clicked section", () => {
     const wrapper = shallow(<Accordion sections={sections} />);
     wrapper.find("button").at(1).simulate("click");
     expect(toJson(wrapper)).toMatchSnapshot();
   });
-  it("closes every section except the clicked one", () => {
+  it("only opens the most recently clicked section", () => {
     const wrapper = shallow(<Accordion sections={sections} />);
     wrapper.find("button").at(2).simulate("click");
-    expect(toJson(wrapper)).toMatchSnapshot();
-  });
-  it("still renders the section correctly when same button pressed twice", () => {
-    const wrapper = shallow(<Accordion sections={sections} />);
-    wrapper.find("button").at(2).simulate("click");
+    wrapper.find("button").at(0).simulate("click");
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 });

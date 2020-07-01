@@ -1,24 +1,30 @@
 import React from "react";
 
 class Bomb extends React.Component {
-  state = { count: 0 };
-  componentDidMount() {
-    console.log("componentDidMount");
-    const milliseconds = 1000;
-    this.interval = setInterval(() => {
-      this.setState({ count: this.state.count + 1 });
-    }, milliseconds);
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0,
+    };
   }
+
+  componentDidMount() {
+    this.interval = setInterval(() => {
+      this.setState((previousState) => ({ count: previousState.count + 1 }));
+    }, 1000);
+  }
+
   componentWillUnmount() {
     clearInterval(this.interval);
   }
 
-  renderDisplay() {
-    const currentCount = this.state.count;
-    if (currentCount >= 8) {
+  conditionalDisplay() {
+    const { count } = this.state;
+
+    if (count >= 8) {
       clearInterval(this.interval);
-      return "BOOM!";
-    } else if (currentCount % 2 === 0) {
+      return "BOOM!!";
+    } else if (count % 2) {
       return "tick";
     } else {
       return "tock";
@@ -28,7 +34,7 @@ class Bomb extends React.Component {
   render() {
     return (
       <div>
-        <p>{this.renderDisplay()}</p>
+        <p>{this.conditionalDisplay()}</p>
       </div>
     );
   }

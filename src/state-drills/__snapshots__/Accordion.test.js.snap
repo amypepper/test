@@ -1,152 +1,105 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`the Accordion component closes every section except the clicked one 1`] = `
-<div
-  className="Accordion"
->
-  <ul
-    className="sections"
+exports[`Accordion component only opens the most recently clicked section 1`] = `
+<ul>
+  <li
+    key="0"
   >
-    <li
-      className="section-content"
-      key="0"
+    <button
+      onClick={[Function]}
     >
-      <button
-        onClick={[Function]}
-        type="button"
-      >
-        Section 1
-      </button>
-    </li>
-    <li
-      className="section-content"
-      key="1"
+      Section 1
+    </button>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    </p>
+  </li>
+  <li
+    key="1"
+  >
+    <button
+      onClick={[Function]}
     >
-      <button
-        onClick={[Function]}
-        type="button"
-      >
-        Section 2
-      </button>
-      <p>
-        Cupiditate tenetur aliquam necessitatibus id distinctio quas nihil ipsam nisi modi!
-      </p>
-    </li>
-    <li
-      className="section-content"
-      key="2"
+      Section 2
+    </button>
+  </li>
+  <li
+    key="2"
+  >
+    <button
+      onClick={[Function]}
     >
-      <button
-        onClick={[Function]}
-        type="button"
-      >
-        Section 3
-      </button>
-    </li>
-  </ul>
-</div>
+      Section 3
+    </button>
+  </li>
+</ul>
 `;
 
-exports[`the Accordion component closes every section except the clicked one 2`] = `
-<div
-  className="Accordion"
->
-  <ul
-    className="sections"
+exports[`Accordion component opens a clicked section 1`] = `
+<ul>
+  <li
+    key="0"
   >
-    <li
-      className="section-content"
-      key="0"
+    <button
+      onClick={[Function]}
     >
-      <button
-        onClick={[Function]}
-        type="button"
-      >
-        Section 1
-      </button>
-    </li>
-    <li
-      className="section-content"
-      key="1"
+      Section 1
+    </button>
+  </li>
+  <li
+    key="1"
+  >
+    <button
+      onClick={[Function]}
     >
-      <button
-        onClick={[Function]}
-        type="button"
-      >
-        Section 2
-      </button>
-    </li>
-    <li
-      className="section-content"
-      key="2"
+      Section 2
+    </button>
+    <p>
+      Cupiditate tenetur aliquam necessitatibus id distinctio quas nihil ipsam nisi modi!
+    </p>
+  </li>
+  <li
+    key="2"
+  >
+    <button
+      onClick={[Function]}
     >
-      <button
-        onClick={[Function]}
-        type="button"
-      >
-        Section 3
-      </button>
-      <p>
-        Animi amet cumque sint cupiditate officia ab voluptatibus libero optio et?
-      </p>
-    </li>
-  </ul>
-</div>
+      Section 3
+    </button>
+  </li>
+</ul>
 `;
 
-exports[`the Accordion component renders empty when nothing has been clicked on 1`] = `
-<div
-  className="Accordion"
->
-  <ul
-    className="sections"
-  />
-</div>
-`;
+exports[`Accordion component renders empty given no prop 1`] = `<ul />`;
 
-exports[`the Accordion component still renders the section correctly when same button pressed twice 1`] = `
-<div
-  className="Accordion"
->
-  <ul
-    className="sections"
+exports[`Accordion component renders no sections as active by default 1`] = `
+<ul>
+  <li
+    key="0"
   >
-    <li
-      className="section-content"
-      key="0"
+    <button
+      onClick={[Function]}
     >
-      <button
-        onClick={[Function]}
-        type="button"
-      >
-        Section 1
-      </button>
-    </li>
-    <li
-      className="section-content"
-      key="1"
+      Section 1
+    </button>
+  </li>
+  <li
+    key="1"
+  >
+    <button
+      onClick={[Function]}
     >
-      <button
-        onClick={[Function]}
-        type="button"
-      >
-        Section 2
-      </button>
-    </li>
-    <li
-      className="section-content"
-      key="2"
+      Section 2
+    </button>
+  </li>
+  <li
+    key="2"
+  >
+    <button
+      onClick={[Function]}
     >
-      <button
-        onClick={[Function]}
-        type="button"
-      >
-        Section 3
-      </button>
-      <p>
-        Animi amet cumque sint cupiditate officia ab voluptatibus libero optio et?
-      </p>
-    </li>
-  </ul>
-</div>
+      Section 3
+    </button>
+  </li>
+</ul>
 `;

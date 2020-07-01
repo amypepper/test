@@ -1,10 +1,54 @@
-import React, { Component } from "react";
+import React from "react";
 // import Messages from "./Messages";
 // import TheDate from "./state/TheDate";
 // import Counter from "./state/Counter";
 // import Tabs from "./state/Tabs";
-import Accordion from "./state-drills/Accordion";
-import "./App.css";
+// import Accordion from "./state-drills/Accordion";
+// import "./App.css";
+import AddItemForm from "./state/shopping-list/AddItemForm";
+import ShoppingList from "./state/shopping-list/ShoppingList";
+
+class App extends React.Component {
+  state = {
+    shoppingItems: [
+      /* put stub items in here for testing */
+      { name: "apples", checked: false },
+      { name: "oranges", checked: true },
+      { name: "bread", checked: false },
+    ],
+  };
+
+  handleDeleteItem() {
+    console.log("handle delete item called", { item });
+  }
+  handleCheckItem() {
+    console.log("handle check item called", { item });
+  }
+
+  render() {
+    return (
+      <>
+        <header>
+          <h1>Shopping List</h1>
+        </header>
+        <main>
+          <section>
+            <AddItemForm />
+          </section>
+          <section>
+            <ShoppingList
+              items={this.state.shoppingItems}
+              onDeleteItem={this.handleDeleteItem}
+              onCheckItem={this.handleCheckItem}
+            />
+          </section>
+        </main>
+      </>
+    );
+  }
+}
+
+export default App;
 
 // const tabsProp = [
 //   {
@@ -24,33 +68,19 @@ import "./App.css";
 //   },
 // ];
 
-const sections = [
-  {
-    title: "Section 1",
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-  },
-  {
-    title: "Section 2",
-    content:
-      "Cupiditate tenetur aliquam necessitatibus id distinctio quas nihil ipsam nisi modi!",
-  },
-  {
-    title: "Section 3",
-    content:
-      "Animi amet cumque sint cupiditate officia ab voluptatibus libero optio et?",
-  },
-];
-
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <h1>My App</h1>
-
-        <Accordion sections={sections} />
-      </div>
-    );
-  }
-}
-
-export default App;
+// const sections = [
+//   {
+//     title: "Section 1",
+//     content: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+//   },
+//   {
+//     title: "Section 2",
+//     content:
+//       "Cupiditate tenetur aliquam necessitatibus id distinctio quas nihil ipsam nisi modi!",
+//   },
+//   {
+//     title: "Section 3",
+//     content:
+//       "Animi amet cumque sint cupiditate officia ab voluptatibus libero optio et?",
+//   },
+// ];
